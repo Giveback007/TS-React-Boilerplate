@@ -1,0 +1,1 @@
+npm install -S react react-dom react-redux redux && npm install -D @types/react-dom @types/react-redux @types/react babel-loader clean-webpack-plugin css-loader html-webpack-plugin node-sass react-hot-loader sass-loader style-loader ts-loader typescript url-loader webpack-cli webpack-dev-server webpack&& exit
