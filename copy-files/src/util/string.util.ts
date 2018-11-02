@@ -1,0 +1,1 @@
+export const strIncludes = (str: string, subStr: string) => str.indexOf(subStr) !== -1;
