@@ -25,7 +25,7 @@ const copyFiles = require('./copy').copyFiles;
     console.log('\n### Creating Files ###');
     fs.appendFileSync(`../${projectName}/package.json`, JSON.stringify(data));
     fs.appendFileSync(`../${projectName}/README.md`, readme);
-    fs.appendFileSync(`../${projectName}/install.bat`, `${git} && npm install && code . && exit`);//  
+    fs.appendFileSync(`../${projectName}/install.bat`, `npm install && ${git} && code . && exit`);//  
     copyFiles('./copy-files', `../${projectName}`);
 
     console.log('\n### Installing NPM Packages ###');
