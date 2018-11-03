@@ -1,3 +1,5 @@
+import { anyObj, dictionary } from "../types/general.types";
+
 /** Checks if object has the key, made as a function for type transfer */
 export const hasKey = <K extends string>(obj: any, key: K): obj is { [P in K]: any } => key in obj;
 

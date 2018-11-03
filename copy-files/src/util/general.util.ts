@@ -1,4 +1,5 @@
 import { objVals } from "./object.util";
+import { JsType, JsTypeFind } from "../types/general.types";
 
 /** Iterates n times over a function */
 export const iterate = (num: number) => ({

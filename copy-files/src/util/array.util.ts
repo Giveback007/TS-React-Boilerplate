@@ -1,3 +1,4 @@
+import { dictionary } from "../types/general.types";
 import { typeOf } from "./general.util";
 import { genDictionary, removeObjKeys, objVals } from "./object.util";
 

@@ -1,8 +1,8 @@
-type anyObj = { [key: string]: any };
+export type anyObj = { [key: string]: any };
 
-type dictionary<T> = { [id: string]: T };
+export type dictionary<T> = { [id: string]: T };
 
-type JsType = 
+export type JsType = 
     | 'array'
     | 'boolean'
     | 'function'
@@ -14,7 +14,7 @@ type JsType =
     | 'symbol'
     | 'undefined';
 
-type JsTypeFind<S extends JsType> = 
+export type JsTypeFind<S extends JsType> = 
     S extends 'array'       ? any[] :
     S extends 'boolean'     ? boolean :
     S extends 'function'    ? Function :
