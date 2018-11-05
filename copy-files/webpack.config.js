@@ -12,7 +12,7 @@ module.exports = {
     },
     entry: {
         app:"./src/index.tsx",
-        // vendor: ["react", "react-dom", "chess.js"]
+        // vendor: ["react", "react-dom"]
     },
     output: {
         path: __dirname + "/dist",
@@ -28,7 +28,13 @@ module.exports = {
                 test: /\.tsx?$/, 
                 use: [{
                     loader: 'babel-loader',
-                    options: { plugins: ['react-hot-loader/babel'] }
+                    options: {
+                        // This is a feature of `babel-loader` for webpack (not Babel itself).
+                        // It enables caching results in ./node_modules/.cache/babel-loader/
+                        // directory for faster rebuilds.
+                        cacheDirectory: true,
+                        plugins: ['react-hot-loader/babel']
+                    }
                 },
                 {
                     loader: 'ts-loader',
@@ -77,7 +83,6 @@ module.exports = {
     externals: {
         // "react": "React",
         // "react-dom": "ReactDOM",
-        // "chess.js": "Chess",
         // "redux": "Redux"
     }
 }

@@ -8,8 +8,8 @@
         "webpack-serve": "node_modules/.bin/webpack-dev-server --open"
     },
     "dependencies": {
-        "react": "16.4.0",
-        "react-dom": "16.4.0",
+        "react": "16.6.0",
+        "react-dom": "16.6.0",
         "react-redux": "5.0.7",
         "redux": "4.0.0"
     },
@@ -26,7 +26,6 @@
         "sass-loader": "7.0.1",
         "style-loader": "0.21.0",
         "ts-loader": "4.3.0",
-        "ts-node": "7.0.1",
         "typescript": "2.8.4",
         "url-loader": "1.0.1",
         "webpack-cli": "2.1.4",

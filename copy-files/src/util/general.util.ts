@@ -1,6 +1,9 @@
 import { objVals } from "./object.util";
 import { JsType, JsTypeFind } from "../types/general.types";
 
+/** Generate a random number between min and max, min and max are inclusive */
+export const rand = (min: number, max: number) => Math.floor(Math.random() * ((max + 1) - min)) + min;
+
 /** Iterates n times over a function */
 export const iterate = (num: number) => ({
     for: (funct: (i: number) => any) => {

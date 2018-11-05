@@ -16,9 +16,9 @@ const copyFiles = require('./copy').copyFiles;
     const readme = 
     `# ${appUtil.toCapName(projectName)}`
     + '\n\nThe project can be viewed here:'
-    + '\n\n[Link-To-Live-Project](https://)'
+    + '\n\n<!-- [View The Page](fix-me) -->'
     + '\n\n### Goals:'
-    + '\n* Do something'
+    + '\n<!-- * Do something -->'
 
     const git = 'git init && git add -A && git commit -m "Initial commit"'
 
