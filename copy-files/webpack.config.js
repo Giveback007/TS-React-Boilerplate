@@ -1,3 +1,4 @@
+// TODO:
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -53,15 +54,26 @@ module.exports = {
                     options: { sourceMaps: true }
                 }]
             }, 
+            // png files don't load, need fix
             {
-                test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test: /\.(jpg|png||woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 use: [{
                     loader: 'url-loader',
                     options: {
                         limit: 100000
                     }
                 }]
-            }
+            },
+            // Alternatively use file-loader
+            // {
+            //     test: /\.(jpg|png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            //     use: [{
+            //         loader: "file-loader",
+            //         options: {
+            //             name: "assets/[name].[ext]",
+            //         }
+            //     }]
+            // }
         ]
     },
     plugins: [
@@ -75,6 +87,14 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
+
+    // TODO: Purge css // https://www.purgecss.com/#webpack
+    // plugins: [
+    //     new ExtractTextPlugin('[name].css?[hash]'),
+    //     new PurgecssPlugin({
+    //       paths: glob.sync(`${PATHS.src}/*`)
+    //     })
+    // ],
 
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
