@@ -1,22 +1,21 @@
-import { hot } from "react-hot-loader";
 import React = require("react");
-import { AppTest, AppActions } from "../store/actions";
-import { State } from "../store/root.reducer";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
+import { AppActions, AppTest } from "../store/actions";
+import { State } from "../store/root.reducer";
 
 const stateToProps = (state: State) => state.app;
-const dispatchToProps = (dispatch: Dispatch<AppActions>) => 
+const dispatchToProps = (dispatch: Dispatch<AppActions>) =>
 ({
-    appTest: () => dispatch(new AppTest)
+    appTest: () => dispatch(new AppTest()),
 });
 
 type P = ReturnType<typeof stateToProps> & ReturnType<typeof dispatchToProps>;
-type S = {}
+type S = {};
 
-class App extends React.Component<P, S>{
-    
-    render() {
+class App extends React.Component<P, S> {
+
+    public render() {
         const { appTest, testNum } = this.props;
 
         return (
@@ -25,8 +24,8 @@ class App extends React.Component<P, S>{
                 <h2>Clicks: {testNum}</h2>
                 <button onClick={appTest}>Test</button>
             </div>
-        )
+        );
     }
 }
 
-export default hot(module)(connect(stateToProps, dispatchToProps)(App));
+export default connect(stateToProps, dispatchToProps)(App);

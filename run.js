@@ -15,7 +15,7 @@ const copyFiles = require('./copy').copyFiles;
 
     const readme = 
     `# ${appUtil.toCapName(projectName)}`
-    + '\n\nThe project can be viewed here:'
+    + '\n\n<!-- The project can be viewed here: -->'
     + '\n\n<!-- [View The Page](fix-me) -->'
     + '\n\n### Goals:'
     + '\n<!-- * Do something -->'
@@ -25,7 +25,7 @@ const copyFiles = require('./copy').copyFiles;
     console.log('\n### Creating Files ###');
     fs.appendFileSync(`../${projectName}/package.json`, JSON.stringify(data));
     fs.appendFileSync(`../${projectName}/README.md`, readme);
-    fs.appendFileSync(`../${projectName}/install.bat`, `npm install && ${git} && code . && exit`);//  
+    fs.appendFileSync(`../${projectName}/install.bat`, `npm install && ${git} && code . && exit`);
     copyFiles('./copy-files', `../${projectName}`);
 
     console.log('\n### Installing NPM Packages ###');
@@ -33,6 +33,5 @@ const copyFiles = require('./copy').copyFiles;
     fs.unlinkSync(`../${projectName}/install.bat`);
 
     console.log(`\n### Project "${appUtil.toCapName(projectName)}" Created ###`);
-    console.log('\n### Run the project with "npm start"\n');
     process.exit(0);
 }();

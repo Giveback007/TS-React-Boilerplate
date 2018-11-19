@@ -5,31 +5,37 @@
     "main": "index.html",
     "scripts": {
         "start": "code . && npm run webpack-serve",
-        "webpack-serve": "node_modules/.bin/webpack-dev-server --open"
+        "webpack-serve": "node_modules/.bin/webpack-dev-server",
+        "lint": "tslint 'src/**/*.{ts,tsx}'"
     },
     "dependencies": {
-        "@giveback007/util-lib": "^0.2.0",
-        "react-dom": "16.6.0",
-        "react-redux": "5.0.7",
-        "react": "16.6.0",
-        "redux": "4.0.0"
+        "@giveback007/util-lib": "^0.5.4",
+        "react-dom": "16.6.3",
+        "react-redux": "5.1.1",
+        "react": "16.6.3",
+        "redux": "4.0.1"
     },
     "devDependencies": {
-        "@types/react": "16.4.18",
+        "@types/react": "16.7.6",
         "@types/react-dom": "16.0.9",
-        "babel-loader": "7.1.4",
-        "clean-webpack-plugin": "0.1.19",
-        "css-loader": "0.28.11",
+        "@types/react-redux": "6.0.9",
+        "clean-webpack-plugin": "1.0.0",
+        "css-loader": "1.0.1",
+        "file-loader": "2.0.0",
+        "fork-ts-checker-notifier-webpack-plugin": "0.6.2",
+        "fork-ts-checker-webpack-plugin": "0.4.15",
         "html-webpack-plugin": "3.2.0",
-        "node-sass": "4.9.0",
-        "react-hot-loader": "4.2.0",
-        "sass-loader": "7.0.1",
-        "style-loader": "0.21.0",
-        "ts-loader": "4.3.0",
-        "typescript": "2.8.4",
-        "url-loader": "1.0.1",
-        "webpack-cli": "2.1.4",
-        "webpack-dev-server": "3.1.4",
-        "webpack": "4.10.2"
+        "node-sass": "4.10.0",
+        "sass-loader": "7.1.0",
+        "style-loader": "0.23.1",
+        "ts-loader": "5.3.0",
+        "tslint": "^5.11.0",
+        "tslint-config-prettier": "^1.16.0",
+        "tslint-react": "^3.6.0",
+        "typescript": "3.1.6",
+        "url-loader": "1.1.2",
+        "webpack": "4.25.1",
+        "webpack-cli": "3.1.2",
+        "webpack-dev-server": "3.1.10"
     }
 }

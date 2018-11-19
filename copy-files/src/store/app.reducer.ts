@@ -1,17 +1,16 @@
 import { Reducer } from "redux";
-import { AppActions, APP_TEST } from "./actions";
-import { newStateCurrying } from "./root.reducer";
+import { APP_TEST, AppActions } from "./actions";
 
 export interface AppState {
     testNum: number;
 }
 
 const initState: AppState = {
-    testNum: 0 
-}
+    testNum: 0,
+};
 
-export const appReducer: Reducer<AppState> = 
-    (state = initState, action: AppActions) => {
+export const appReducer: Reducer<AppState, AppActions> =
+(state = initState, action: AppActions) => {
     switch (action.type) {
         case APP_TEST:
             const testNum = state.testNum + action.payload.test;
@@ -19,4 +18,4 @@ export const appReducer: Reducer<AppState> =
         default:
             return state;
     }
-}
+};
